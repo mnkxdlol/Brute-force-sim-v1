@@ -1,68 +1,84 @@
-# This is a simulator of Brute Force
+# **Brute Force Simulator**  
 
-# What is this project even about?
+## **📌 What is this project about?**  
+This project simulates different types of **Brute Force attacks** on passwords and hashes using **standard methods**. The graphical interface is developed with **Tkinter**. 
 
-This project simulates a Brute Force attack on a password or hash using standard methods. The graphical interface is developed with Tkinter. You can choose between a Brute Force, Dictionary, or Attack on Hash.
+### **🔹 Available Attack Methods:**  
+1. **Brute Force Attack:** Tries all possible character combinations to guess the password.  
+2. **Dictionary Attack:** Uses a list of common passwords to find a match.  
+3. **Attack on Hash:** Attempts to match a given hash (MD5, SHA-256, bcrypt) to its original password using a dictionary-based approach.  
 
-1. Brute Force: It will try all possible combinations of a given set of characters to guess the correct password.
+ The program **automatically downloads** multiple password lists from **SecLists**, making the attack more effective! **ENJOY!** :P 
 
-2. Dictionary Attack: It will attempt the passwords from a pre-defined password list.
+## **💻 How to Install and Run the Project?**  
 
-3. Attack on Hash: This allows you to hash a password and then attempt to find its original value by matching the hash using various algorithms (like MD5, SHA-256, or bcrypt).
-
-The program automatically downloads multiple lists of current passwords from SecLists to enhance the dictionary attack functionality. ENJOY! :P
-
-# HOW TO USE?
-
-1. Clone this project:
-
+### **1️⃣ Clone this project**  
+```
 git clone https://github.com/mnkxdlol/Brute-force-sim-v1.git
 cd Brute-force-sim-v1
+```
 
-# IF THIS DOESN'T WORK:
+### **2️⃣ Install Python & Dependencies**  
+Ensure you have **Python 3.x** installed. If not, download and install it from [Python.org](https://www.python.org/downloads/).  
 
-1. Make sure you have Python 3.x installed on your computer. If not, you can download it from python.org.
+Then, install the required Python libraries:  
+```
+pip install -r requirements.txt
+```
 
-2. Then, install the required libraries using pip. Open a terminal or command prompt and run:
-pip install requests py4j tk
-Run the program:
+## **🚀 How to Use the GUI?**  
 
-3. Once the dependencies are installed, run the main Python script to start the GUI. In the terminal, navigate to the project folder and run:
+### **1️⃣ Run the program**  
+```
 python bruteforce.py
+```
 
-# Using the GUI:
+### **2️⃣ Using the GUI**  
+- **Enter a password or hash** (depending on the attack type).  
+- **Select an attack method** from the dropdown menu:  
+  - 🔹 **Brute Force:** Tests all possible character combinations.  
+  - 🔹 **Dictionary Attack:** Uses a list of common passwords.  
+  - 🔹 **Attack on Hash:** Tries to reverse a hash by matching it to known passwords.  
+- **Start the attack** by clicking the `"Start the attack! :P"` button.  
+- **Clear logs** anytime using the `"Clear Logs"` button.  
 
-After launching the program, the GUI will appear.
+## **🛠 How It Works?**  
 
-Enter a password or hash: This is the value you want the program to attempt to crack.
+### **🔹 Brute Force Attack:**  
+- The program generates **all possible combinations** of characters (letters, numbers, symbols).  
+- It **tries every combination** until it finds the correct password.  
+- 🚨 **Time-consuming for longer passwords!**  
 
-For Brute Force attacks, enter the actual password.
-For Hash attack, enter the hash value (MD5, SHA-256, or bcrypt).
-Select the method: From the dropdown, select one of the attack methods:
+### **🔹 Dictionary Attack:**  
+- The program downloads **password lists from SecLists** (commonly used/leaked passwords).  
+- It **checks each password** from the list until it finds a match.  
 
-Brute Force: The program will generate all possible combinations based on the character set.
-Dictionary: The program will try a series of commonly used passwords from an online list.
-Attack on Hash: The program will attempt to find the original password by matching the hash value (MD5, SHA-256, or bcrypt).
-Start the attack: Click the "Start the attack! :p" button to begin the attack. The program will show the progress in the log area.
+### **🔹 Attack on Hash:**  
+- Enter a **hashed password** (MD5, SHA-256, bcrypt).  
+- The program **tries matching it** to known passwords by hashing them and comparing the results.  
 
-Clear the logs: If you want to clear the logs from the screen, click the "Clear Logs" button.
+---
 
-# How it works:
-Brute Force: The program uses a pre-defined set of characters (letters, numbers, and some symbols) and generates all possible combinations for passwords up to 4 characters in length. This is suitable for quick tests or learning purposes.
+## **⚠️ Notes & Performance Considerations**  
 
-Dictionary Attack: The program will download several password lists from the internet (SecLists), which are typically made up of commonly used passwords, leaks, or top 100/1000 passwords. It then tries each one of those passwords against your input to check if it matches.
+- **Hybrid Attack Removed**: A hybrid attack feature was previously available, but it was removed for **optimization reasons**. Feel free to **reimplement it** if needed! :D 
+- **Password Lists**: The program downloads multiple password lists from **SecLists** to increase success rates.  
+- **Performance Warning**: Brute force attacks on **long passwords** can take a **VERY long time**. The dictionary attack is **much faster** for common passwords.  
 
-Attack on Hash: You can hash your password using any of the supported hashing algorithms (MD5, SHA-256, bcrypt) and then let the program attempt to reverse it by checking against the same lists of commonly used passwords.
+---
 
-Notes:
-The project had an hybrid part but because of optimization reasons and because it was causing performance issues, I decided to remove it, but feel free to update the project and maybe add it ! :D
+## **🛠 Troubleshooting**  
 
-Password Lists: The program will download multiple password lists (from the SecLists repository) when performing dictionary-based attacks. These lists are commonly used for password cracking and include both frequently used passwords and those that have been leaked in data breaches.
+- **"ModuleNotFoundError" (Missing dependencies)?**  
+  - Run `pip install -r requirements.txt` to install missing libraries.  
+- **GUI Freezing?**  
+  - The attack process runs on a separate thread, but **Brute Force on long passwords** can be slow. Try using the **Dictionary Attack** for better speed.  
+- **"Failed to load password list"?**  
+  - Ensure you have **internet access** (password lists are downloaded automatically).  
 
-Performance Considerations: Depending on the method you select and the length of the password you're testing, some attacks may take a considerable amount of time. For longer passwords or more complex hash attacks, the brute force or hash attack methods may take longer to complete.
+---
 
-Troubleshooting:
-If the logs don't update: Ensure that the GUI is running in the foreground. The program uses a separate thread for the attack to keep the UI responsive.
+## **📜 License**  
+This project is licensed under the **MIT License**. Feel free to modify, share, or contribute!  
 
-License:
-This project is licensed under the MIT License
+---
