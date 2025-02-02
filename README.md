@@ -16,8 +16,8 @@ The program automatically downloads multiple lists of current passwords from Sec
 
 1. Clone this project:
 
-git clone https://github.com/votre-repo/BruteForceSimulator.git
-cd BruteForceSimulator
+git clone https://github.com/mnkxdlol/Brute-force-sim-v1.git
+cd Brute-force-sim-v1
 
 # IF THIS DOESN'T WORK:
 
